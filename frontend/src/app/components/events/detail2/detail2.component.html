@@ -1,0 +1,44 @@
+<p class="nothingSelected"  *ngIf="choosenAEvent==null">Select an Event at the left</p>
+
+<div *ngIf="choosenAEvent != null">
+  <table mdbTable>
+    <thead class="black white-text ">
+    <tr>
+      <th>Selected event details: (id= {{choosenAEvent.id}})</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="black white-text">Title</th>
+        <td ><input type="text" [ngModel]="choosenAEvent.title"></td>
+      </tr>
+      <tr>
+        <th class="black white-text">Description</th>
+        <td ><input type="textfield" [ngModel]="choosenAEvent.description"></td>
+      </tr>
+      <tr>
+        <th class="black white-text">Status</th>
+        <td>
+          <select name="status" id="status">
+          <option value="" selected disabled  hidden>{{choosenAEvent.status}}</option>
+          <option value="DRAFT">Draft</option>
+          <option value="PUBLISHED">Published</option>
+          <option value="CANCELED">Canceled</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th class="black white-text">Is Ticketed:</th>
+        <td><input type="checkbox" [(ngModel)]="choosenAEvent.isTicketed"></td>
+      </tr>
+    <tr>
+      <th class="black white-text">Participation Fee</th>
+      <td><input type="text" [(ngModel)]="choosenAEvent.participationFee"></td>
+    </tr>
+      <tr>
+        <th class="black white-text">Maximum Participants</th>
+        <td><input type="text" [(ngModel)]="choosenAEvent.maxParticipants"></td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="deleteAEvent()" type="button" mdbBtn color="primary" mdbWavesEffect>Delete Event</button>
+</div>

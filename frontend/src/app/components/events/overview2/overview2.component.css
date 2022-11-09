@@ -1,0 +1,21 @@
+.leftTable{
+  float: left;
+}
+
+table{
+  max-width: 200px;
+
+}
+
+.table tr.active td {
+  background-color:#48da24 !important;
+  color: white;
+}
+
+
+app-detail2{
+float: right;
+  position: center;
+  margin: 30px;
+
+}

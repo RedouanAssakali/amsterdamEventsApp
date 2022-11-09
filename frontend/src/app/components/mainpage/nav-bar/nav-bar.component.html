@@ -1,0 +1,62 @@
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#"></a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" routerLink="/home"  mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown routerLinkActive="active">
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          My Events<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu" >
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/events/overview1">All events list</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/events/overview2">M/D (component store)</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/events/overview3">M/D (from service)</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/events/overview4">M/D (routerparams)</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/events/overview5">M/D (from REST)</a>
+        </div>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          My Registrations<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Active</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">History</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>My Account</a>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/signup">Sign Up</a>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">Log in</a>
+        </a>
+      </li>
+
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

@@ -1,0 +1,46 @@
+<p class="nothingSelected"  *ngIf="choosenAEvent==null">Select an Event at the left</p>
+<div *ngIf="choosenAEvent != null">
+  <table mdbTable>
+    <thead class="black white-text ">
+    <tr>
+      <th>Selected event details: (id= {{choosenAEvent.id}})</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th class="black white-text">Title</th>
+      <td ><input type="text" (ngModelChange)="setDisabled(false)" [(ngModel)]="choosenAEvent.title"></td>
+    </tr>
+    <tr>
+      <th class="black white-text">Description</th>
+      <td ><input type="textfield" (ngModelChange)="setDisabled(false)" [(ngModel)]="choosenAEvent.description"></td>
+    </tr>
+    <tr>
+      <th class="black white-text">Status</th>
+      <td>
+        <select  class="custom-select" id="status" (ngModelChange)="setDisabled(false)" [value]="choosenAEvent.status" [(ngModel)]="choosenAEvent.status">
+          <option value="DRAFT">Draft</option>
+          <option value="PUBLISHED">Published</option>
+          <option value="CANCELED">canceled</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th class="black white-text">Is Ticketed:</th>
+      <td><input type="checkbox" (ngModelChange)="setDisabled(false)" [(ngModel)]="choosenAEvent.isTicketed"></td>
+    </tr>
+    <tr>
+      <th class="black white-text">Participation Fee</th>
+      <td><input type="text"  (ngModelChange)="setDisabled(false)" [(ngModel)]="choosenAEvent.participationFee"></td>
+    </tr>
+    <tr>
+      <th class="black white-text">Maximum Participants</th>
+      <td><input type="text" (ngModelChange)="setDisabled(false)" [(ngModel)]="choosenAEvent.maxParticipants"></td>
+    </tr>
+    </tbody>
+  </table>
+  <button (click)="deleteAEvent()"  type="button" mdbBtn color="primary" mdbWavesEffect>Delete Event</button>
+  <button (click)="saveAEvent()" [disabled]="disableButton()" type="button" mdbBtn color="primary" mdbWavesEffect>Save</button>
+  <button (click)="clearAEvent()" type="button" mdbBtn color="primary" mdbWavesEffect>Clear</button>
+  <button (click)="resetAEvent()" [disabled]="disableButton()" type="button" mdbBtn color="primary" mdbWavesEffect>Reset</button>
+  <button (click)="cancelAEvent()" type="button" mdbBtn color="primary" mdbWavesEffect>Cancel</button>
+</div>

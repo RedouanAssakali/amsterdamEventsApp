@@ -1,0 +1,26 @@
+<table mdbTable striped="true">
+  <thead>
+  <tr>
+    <th  scope="col">Id</th>
+    <th  scope="col">Title</th>
+    <th  scope="col">Start</th>
+    <th  scope="col">End</th>
+    <th  scope="col">Status</th>
+    <th  scope="col">Entrance Fee</th>
+    <th  scope="col">Max Participations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr mdbTableCol *ngFor="let aEvent of aEvents">
+    <th scope="row">{{ aEvent.id }}</th>
+      <td>{{ aEvent.title }}</td>
+    <td>{{ aEvent.start }}</td>
+    <td>{{ aEvent.end }}</td>
+    <td>{{ aEvent.status }}</td>
+    <td>€{{ aEvent.participationFee }}</td>
+    <td>{{ aEvent.maxParticipants}}</td>
+  </tr>
+  </tbody>
+</table>
+<button (click)="addEvent()" type="button" mdbBtn color="primary" mdbWavesEffect>add Event</button>
+

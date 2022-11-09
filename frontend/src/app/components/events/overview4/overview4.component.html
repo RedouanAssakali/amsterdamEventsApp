@@ -1,0 +1,22 @@
+<div class="leftTable">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Event title</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr *ngFor="let aEvent of aEvents; let i = index" (click)="selected(i,aEvent)" [class.active]=" i == HighlightRow">
+      <td >{{ aEvent.title }} </td>
+    </tr>
+
+    </tbody>
+  </table>
+  <button (click)="addEvent()" type="button" mdbBtn color="primary" mdbWavesEffect>add Event</button>
+</div>
+
+<div class="detail">
+  <router-outlet></router-outlet>
+</div>
